@@ -4,24 +4,28 @@
     "description": "A handy app for calculating pleats with precision and style.",
     "main": "main.py",
     "scripts": {
+        "start": "npm run dev",
         "dev": "cross-env NODE_ENV=development webpack serve",
         "build": "cross-env NODE_ENV=production webpack",
-        "run": ".venv/bin/python main.py"
+        "predeploy": "npm run build"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/TheCodingJsoftware/PleatCalculator"
+        "url": "git+https://github.com/TheCodingJsoftware/Pleat-Calculator"
     },
     "keywords": [
-        "hbni",
-        "itv"
+        "pleats",
+        "sewing",
+        "fashion",
+        "calculator",
+        "pwa"
     ],
     "author": "Jared Gross",
     "license": "GPL-3.0",
     "bugs": {
-        "url": "https://github.com/TheCodingJsoftware/PleatCalculator/issues"
+        "url": "https://github.com/TheCodingJsoftware/Pleat-Calculator/issues"
     },
-    "homepage": "https://github.com/TheCodingJsoftware/PleatCalculator#readme",
+    "homepage": "https://github.com/TheCodingJsoftware/Pleat-Calculator#readme",
     "dependencies": {
         "beercss": "^3.11.18",
         "firebase": "^11.9.1",

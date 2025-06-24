@@ -11,21 +11,34 @@ A handy app for calculating pleats with precision and style.
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
-- [Firebase account](https://firebase.google.com/)
+- [Firebase CLI](https://firebase.google.com/docs/cli)
+- A [Firebase project](https://console.firebase.google.com/)
 
 ### Installation
+
+Clone the repository and install dependencies:
 
 ```bash
 npm install
 ```
 
-### Build
+### Local Development
+
+To start a development server with hot reload:
+
+```bash
+npm run dev
+```
+
+### Build for Production
 
 ```bash
 npm run build
 ```
 
-### Publish
+### Deploy to Firebase
+
+Make sure you're logged in (`firebase login`) and have initialized Firebase (`firebase init`). Then run:
 
 ```bash
 firebase deploy
