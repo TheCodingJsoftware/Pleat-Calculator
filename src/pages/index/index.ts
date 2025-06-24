@@ -1,6 +1,9 @@
 import "beercss"
+import "@static/css/style.css"
+import "@utils/install";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { initInstall } from "@utils/install";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAyMJKhhAu7OP0E8MycITIZ0OEnBrPKG9A",
@@ -11,19 +14,6 @@ const firebaseConfig = {
   appId: "1:381653396309:web:6a9e9c732a25261a75dddc",
   measurementId: "G-7YPP3S0K00"
 };
-
-interface BeforeInstallPromptEvent extends Event {
-  prompt: () => Promise<void>;
-  userChoice: Promise<{
-    outcome: 'accepted' | 'dismissed';
-    platform: string;
-  }>;
-}
-
-let deferredPrompt: BeforeInstallPromptEvent | null = null;
-
-// Simple mobile device check
-const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
 
 function inchesToCentimeters(inches: number, decimals: number = 2): string {
     const cm = inches * 2.54;
@@ -113,11 +103,12 @@ function registerStepButtons(input: HTMLInputElement, addBtn: HTMLButtonElement,
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    initInstall();
+
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
 
     const themeToggle = document.getElementById("theme-toggle") as HTMLInputElement;
-    const installPWA = document.getElementById("install-pwa") as HTMLButtonElement;
 
     const inputs = {
         waist: document.getElementById("waist-cirumference") as HTMLInputElement,
@@ -136,29 +127,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const buttons = {
         waist: {
-        add: document.getElementById("waist-circumference-add") as HTMLButtonElement,
-        minus: document.getElementById("waist-circumference-minus") as HTMLButtonElement,
-        decimals: 2,
+            add: document.getElementById("waist-circumference-add") as HTMLButtonElement,
+            minus: document.getElementById("waist-circumference-minus") as HTMLButtonElement,
+            decimals: 2,
         },
         pleatWidth: {
-        add: document.getElementById("pleat-width-add") as HTMLButtonElement,
-        minus: document.getElementById("pleat-width-minus") as HTMLButtonElement,
-        decimals: 4,
+            add: document.getElementById("pleat-width-add") as HTMLButtonElement,
+            minus: document.getElementById("pleat-width-minus") as HTMLButtonElement,
+            decimals: 4,
         },
         pleatCount: {
-        add: document.getElementById("pleat-count-add") as HTMLButtonElement,
-        minus: document.getElementById("pleat-count-minus") as HTMLButtonElement,
-        decimals: 0,
+            add: document.getElementById("pleat-count-add") as HTMLButtonElement,
+            minus: document.getElementById("pleat-count-minus") as HTMLButtonElement,
+            decimals: 0,
         },
         totalMaterial: {
-        add: document.getElementById("total-material-add") as HTMLButtonElement,
-        minus: document.getElementById("total-material-minus") as HTMLButtonElement,
-        decimals: 2,
+            add: document.getElementById("total-material-add") as HTMLButtonElement,
+            minus: document.getElementById("total-material-minus") as HTMLButtonElement,
+            decimals: 2,
         },
         pleatUnderlap: {
-        add: document.getElementById("pleat-underlap-add") as HTMLButtonElement,
-        minus: document.getElementById("pleat-underlap-minus") as HTMLButtonElement,
-        decimals: 4,
+            add: document.getElementById("pleat-underlap-add") as HTMLButtonElement,
+            minus: document.getElementById("pleat-underlap-minus") as HTMLButtonElement,
+            decimals: 4,
         },
     };
     function loadAllInputs() {
@@ -184,33 +175,6 @@ document.addEventListener("DOMContentLoaded", () => {
     themeToggle.addEventListener("change", () => {
         document.body.classList.toggle("dark");
         localStorage.setItem("theme", themeToggle.checked ? "dark" : "light");
-    });
-
-    window.addEventListener("beforeinstallprompt", (e: Event) => {
-        e.preventDefault();
-        deferredPrompt = e as BeforeInstallPromptEvent;
-
-        if (isMobile) {
-            installPWA.style.display = "block";
-        }else{
-            installPWA.style.display = "none";
-        }
-    });
-
-    installPWA.addEventListener("click", async () => {
-        if (deferredPrompt) {
-            deferredPrompt.prompt();
-            const choiceResult = await deferredPrompt.userChoice;
-
-            if (choiceResult.outcome === "accepted") {
-                console.log("User accepted the A2HS prompt");
-            } else {
-                console.log("User dismissed the A2HS prompt");
-            }
-
-            deferredPrompt = null;
-            installPWA.style.display = "none";
-        }
     });
 
     inputs.waist.addEventListener("input", () => {

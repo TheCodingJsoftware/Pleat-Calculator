@@ -67,6 +67,10 @@ module.exports = {
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+        alias: {
+            "@utils": path.resolve(__dirname, "src/utils"),
+            "@static": path.resolve(__dirname, "src/static"),
+        },
         fallback: {
             fs: false,
             path: false,

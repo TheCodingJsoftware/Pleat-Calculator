@@ -4,7 +4,7 @@
     "description": "A handy app for calculating pleats with precision and style.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#E9DDFF",
+    "background_color": "#FDF8FD",
     "theme_color": "#6750a4",
     "orientation": "portrait",
     "icons": [

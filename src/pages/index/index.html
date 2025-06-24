@@ -29,6 +29,9 @@
     </head>
     <body class="light">
         <nav class="top fixed row">
+            <button class="square small-round transparent" data-ui="#about-dialog">
+                <img class="responsive" src="/static/icons/logo.png" alt="Pleat Calculator" width="32" height="32">
+            </button>
             <h5 class="max left-align">Pleat Calculator</h5>
             <label class="switch icon">
                 <input type="checkbox" id="theme-toggle">
@@ -37,11 +40,28 @@
                     <i>dark_mode</i>
                 </span>
             </label>
-            <button id="install-pwa" class="transparent circle">
-                <i>download</i>
-            </button>
         </nav>
         <main class="responsive">
+            <dialog id="about-dialog" class="left">
+                <nav class="row">
+                    <button class="square small-round transparent" data-ui="#about-dialog">
+                        <img class="responsive" src="/static/icons/logo.png" alt="Pleat Calculator" width="32" height="32">
+                    </button>
+                    <h5>Pleat Calculator</h5>
+                </nav>
+                <div class="center-align">
+                    <p>A handy app for calculating<br>pleats with precision and style.</p>
+                    <button onclick="window.open('https://github.com/TheCodingJsoftware/Pleat-Calculator', '_blank')">
+                        <i>code</i>
+                        <span>Source Code</span>
+                    </button>
+                    <p>Developed with <button id="love-button" class="chip circle ripple no-border transparent no-margin"><i style="color: var(--error)">favorite</i><div class="tooltip top">love</div></button> by <a class="link underline" href="https://thecodingjsoftware.github.io">TheCodingJ's</a></p>
+
+                </div>
+                <nav class="right-align">
+                    <button class="transparent link" data-ui="#about-dialog">Close</button>
+                </nav>
+            </dialog>
             <article class="round border grid">
                 <div class="s12 row tiny-space">
                     <div class="small-round prefix fill field label border max">
@@ -133,14 +153,14 @@
                     </div>
                 </div>
             </article>
-            <nav class="row center-align">
-                <p>
-                    Developed with <button id="love-button"
-                        class="chip circle ripple no-border transparent no-margin"><i
-                            style="color: var(--error)">favorite</i><div class="tooltip top">love</div></button> by
-                    <a class="link underline" href="https://thecodingjsoftware.github.io">TheCodingJ's</a>
-                </p>
-            </nav>
         </main>
+        <footer>
+            <nav>
+                <div class="max"></div>
+                <button id="install" class="square round extra primary medium-elevate">
+                    <i>download</i>
+                </button>
+            </nav>
+        </footer>
     </body>
 </html>
