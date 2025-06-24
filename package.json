@@ -1,0 +1,54 @@
+{
+    "name": "pleat-calculator",
+    "version": "1.0.0",
+    "description": "Pleat Caculator",
+    "main": "main.py",
+    "scripts": {
+        "dev": "cross-env NODE_ENV=development webpack serve",
+        "build": "cross-env NODE_ENV=production webpack",
+        "run": ".venv/bin/python main.py"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/TheCodingJsoftware/PleatCalculator"
+    },
+    "keywords": [
+        "hbni",
+        "itv"
+    ],
+    "author": "Jared Gross",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/TheCodingJsoftware/PleatCalculator/issues"
+    },
+    "homepage": "https://github.com/TheCodingJsoftware/PleatCalculator#readme",
+    "dependencies": {
+        "beercss": "^3.11.18",
+        "firebase": "^11.9.1",
+        "install": "^0.13.0",
+        "typescript": "^5.8.3"
+    },
+    "devDependencies": {
+        "copy-webpack-plugin": "^13.0.0",
+        "cross-env": "^7.0.3",
+        "css-loader": "^7.1.2",
+        "esbuild": "^0.25.5",
+        "esbuild-loader": "^4.3.0",
+        "fork-ts-checker-webpack-plugin": "^9.1.0",
+        "glob": "^11.0.3",
+        "glob-all": "^3.3.1",
+        "html-webpack-plugin": "^5.6.3",
+        "image-minimizer-webpack-plugin": "^4.1.3",
+        "material-dynamic-colors": "^1.1.2",
+        "mini-css-extract-plugin": "^2.9.2",
+        "purgecss-webpack-plugin": "^7.0.2",
+        "style-loader": "^4.0.0",
+        "ts-loader": "^9.5.2",
+        "typescript": "^5.8.3",
+        "webpack": "^5.99.9",
+        "webpack-bundle-analyzer": "^4.10.2",
+        "webpack-cli": "^6.0.1",
+        "webpack-dev-server": "^5.2.2",
+        "workbox-webpack-plugin": "^7.3.0"
+    }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+    <head>
+        <title>Pleat Calculator</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="author" content="Jared Gross" />
+        <meta name="description" content="Pleat Calculator is a website to find the latest news, classes, and more." />
+        <meta name="keywords" content="hutterite, itv, hbni, classes, news, calendar, contact" />
+        <meta name="msapplication-TileColor" content="#101413">
+        <meta name="msapplication-TileImage" content="/static/icons/ms-icon-144x144.png">
+        <meta name="theme-color" content="#101413">
+        <link rel="apple-touch-icon" sizes="57x57" href="/static/icons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/static/icons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/static/icons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/static/icons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/static/icons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/static/icons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/static/icons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/static/icons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/static/icons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/static/icons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+    </head>
+    <body class="light">
+        <nav class="top fixed row">
+            <h5 class="max left-align">Pleat Calculator</h5>
+            <label class="switch icon">
+                <input type="checkbox" id="theme-toggle">
+                <span>
+                    <i>light_mode</i>
+                    <i>dark_mode</i>
+                </span>
+            </label>
+            <button id="install-pwa" class="transparent circle">
+                <i>download</i>
+            </button>
+        </nav>
+        <main class="responsive">
+            <article class="round border grid">
+                <div class="s12 row tiny-space">
+                    <div class="small-round fill field label border max">
+                        <input type="number" id="pleat-count" value="14">
+                        <label for="pleat-count">Pleat Count</label>
+                        <span class="helper no-line">It's recommended to use an even number of pleats.</span>
+                    </div>
+                    <div>
+                        <button id="pleat-count-add" class="row chip small-round no-margin primary">
+                            <i>add</i>
+                            <span data-value="1">1</span>
+                        </button>
+                        <button id="pleat-count-minus" class="row chip small-round no-margin primary">
+                            <i>remove</i>
+                            <span data-value="1">1</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="s12 row tiny-space">
+                    <div class="small-round prefix fill field label border max">
+                        <i>apparel</i>
+                        <input type="number" id="total-material" value="110">
+                        <label for="total-material">Total Material</label>
+                        <span id="total-material-helper" class="helper"></span>
+                    </div>
+                    <div>
+                        <button id="total-material-add" class="row chip small-round no-margin primary">
+                            <i>add</i>
+                            <span data-value="1">1</span>
+                        </button>
+                        <button id="total-material-minus" class="row chip small-round no-margin primary">
+                            <i>remove</i>
+                            <span data-value="1">1</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="s12 row tiny-space">
+                    <div class="small-round prefix fill field label border max">
+                        <i>360</i>
+                        <input type="number" id="waist-cirumference" value="34">
+                        <label for="waist-cirumference">Waist Circumference</label>
+                        <span id="waist-circumference-helper" class="helper"></span>
+                    </div>
+                    <div>
+                        <button id="waist-circumference-add" class="row chip small-round no-margin primary">
+                            <i>add</i>
+                            <span data-value="0.25">1/4</span>
+                        </button>
+                        <button id="waist-circumference-minus" class="row chip small-round no-margin primary">
+                            <i>remove</i>
+                            <span data-value="0.25">1/4</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="s12 row tiny-space">
+                    <div class="small-round prefix fill field label border max">
+                        <i>fit_width</i>
+                        <input type="number" id="pleat-width" value="2.4286">
+                        <label for="pleat-width">Pleat Width</label>
+                        <span id="pleat-width-helper" class="helper"></span>
+                    </div>
+                    <div>
+                        <button id="pleat-width-add" class="row chip small-round no-margin primary">
+                            <i>add</i>
+                            <span data-value="0.0625">1/16</span>
+                        </button>
+                        <button id="pleat-width-minus" class="row chip small-round no-margin primary">
+                            <i>remove</i>
+                            <span data-value="0.0625">1/16</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="s12 row tiny-space">
+                    <div class="small-round prefix fill field label border max">
+                        <i>width_full</i>
+                        <input type="number" id="pleat-underlap" value="5.4285">
+                        <label for="pleat-underlap">Pleat Underlap</label>
+                        <span id="pleat-underlap-helper" class="helper"></span>
+                    </div>
+                    <div>
+                        <button id="pleat-underlap-add" class="row chip small-round no-margin primary">
+                            <i>add</i>
+                            <span data-value="0.25">1/4</span>
+                        </button>
+                        <button id="pleat-underlap-minus" class="row chip small-round no-margin primary">
+                            <i>remove</i>
+                            <span data-value="0.25">1/4</span>
+                        </button>
+                    </div>
+                </div>
+            </article>
+            <nav class="row center-align">
+                <p>
+                    Developed with <button id="love-button"
+                        class="chip circle ripple no-border transparent no-margin"><i
+                            style="color: var(--error)">favorite</i><div class="tooltip top">love</div></button> by
+                    <a class="link underline" href="https://thecodingjsoftware.github.io">TheCodingJ's</a>
+                </p>
+            </nav>
+        </main>
+    </body>
+</html>
