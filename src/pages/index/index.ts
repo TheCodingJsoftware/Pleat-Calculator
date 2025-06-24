@@ -1,4 +1,16 @@
 import "beercss"
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAyMJKhhAu7OP0E8MycITIZ0OEnBrPKG9A",
+  authDomain: "pleatcalculator.firebaseapp.com",
+  projectId: "pleatcalculator",
+  storageBucket: "pleatcalculator.firebasestorage.app",
+  messagingSenderId: "381653396309",
+  appId: "1:381653396309:web:6a9e9c732a25261a75dddc",
+  measurementId: "G-7YPP3S0K00"
+};
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -101,6 +113,9 @@ function registerStepButtons(input: HTMLInputElement, addBtn: HTMLButtonElement,
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
     const themeToggle = document.getElementById("theme-toggle") as HTMLInputElement;
     const installPWA = document.getElementById("install-pwa") as HTMLButtonElement;
 

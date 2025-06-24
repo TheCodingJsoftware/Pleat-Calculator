@@ -11,6 +11,7 @@
         <meta name="msapplication-TileColor" content="#101413">
         <meta name="msapplication-TileImage" content="/static/icons/ms-icon-144x144.png">
         <meta name="theme-color" content="#101413">
+        <meta name="google-site-verification" content="mFxSLIXH4LddS1jntZICGshy-RcRRYLzU8hUFyZ279o" />
         <link rel="apple-touch-icon" sizes="57x57" href="/static/icons/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="/static/icons/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="/static/icons/apple-icon-72x72.png">
@@ -43,6 +44,24 @@
         <main class="responsive">
             <article class="round border grid">
                 <div class="s12 row tiny-space">
+                    <div class="small-round prefix fill field label border max">
+                        <i>360</i>
+                        <input type="number" id="waist-cirumference" value="34">
+                        <label for="waist-cirumference">Waist Circumference</label>
+                        <span id="waist-circumference-helper" class="helper"></span>
+                    </div>
+                    <div>
+                        <button id="waist-circumference-add" class="row chip small-round no-margin primary">
+                            <i>add</i>
+                            <span data-value="0.25">1/4</span>
+                        </button>
+                        <button id="waist-circumference-minus" class="row chip small-round no-margin primary">
+                            <i>remove</i>
+                            <span data-value="0.25">1/4</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="s12 row tiny-space">
                     <div class="small-round fill field label border max">
                         <input type="number" id="pleat-count" value="14">
                         <label for="pleat-count">Pleat Count</label>
@@ -74,24 +93,6 @@
                         <button id="total-material-minus" class="row chip small-round no-margin primary">
                             <i>remove</i>
                             <span data-value="1">1</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="s12 row tiny-space">
-                    <div class="small-round prefix fill field label border max">
-                        <i>360</i>
-                        <input type="number" id="waist-cirumference" value="34">
-                        <label for="waist-cirumference">Waist Circumference</label>
-                        <span id="waist-circumference-helper" class="helper"></span>
-                    </div>
-                    <div>
-                        <button id="waist-circumference-add" class="row chip small-round no-margin primary">
-                            <i>add</i>
-                            <span data-value="0.25">1/4</span>
-                        </button>
-                        <button id="waist-circumference-minus" class="row chip small-round no-margin primary">
-                            <i>remove</i>
-                            <span data-value="0.25">1/4</span>
                         </button>
                     </div>
                 </div>

@@ -179,6 +179,11 @@ module.exports = {
                     from: path.resolve(__dirname, 'src', 'robots.txt'),
                     to: path.resolve(__dirname, 'public', 'robots.txt'),
                     noErrorOnMissing: true
+                },
+                {
+                    from: path.resolve(__dirname, 'src', 'google9d968a11b4bf61f7.html'),
+                    to: path.resolve(__dirname, 'public', 'google9d968a11b4bf61f7.html'),
+                    noErrorOnMissing: true
                 }
             ]
         }),
