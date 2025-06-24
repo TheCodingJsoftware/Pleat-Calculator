@@ -1,7 +1,7 @@
 {
     "name": "pleat-calculator",
     "version": "1.0.0",
-    "description": "Pleat Caculator",
+    "description": "A handy app for calculating pleats with precision and style.",
     "main": "main.py",
     "scripts": {
         "dev": "cross-env NODE_ENV=development webpack serve",
