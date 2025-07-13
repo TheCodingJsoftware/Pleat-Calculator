@@ -69,3 +69,21 @@ node_modules/
 .dataconnect
 
 public/
+
+gradle/
+
+*.jks
+*.keystore
+*.apk
+*.gradle
+gradlew
+gradlew.bat
+gradle.properties
+manifest-checksum.txt
+*.aab
+*.apk
+*.idsig
+build/
+app/
+store_icon.png
+twa-manifest.json

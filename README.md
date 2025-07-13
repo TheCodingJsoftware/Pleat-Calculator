@@ -5,6 +5,7 @@ A handy app for calculating pleats with precision and style.
 ## Demo
 
 ![image](src/static/screenshots/pleatcalculator.web.app_.png "Demo")
+![image](src/static/screenshots/pleatcalculator.web.app_dark.png "Demo")
 
 ## Development
 
